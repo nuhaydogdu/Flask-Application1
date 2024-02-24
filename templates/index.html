@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  Nuh Aydoğdu 190316020 
+  <br>  
+  Kadirhan Özen 190316042
+  <br>  
+  Mücahit Berat Uçar 180316044
+  <div id="plot"></div>
+
+  <script>
+
+    var data = [{
+      x: {{ x|tojson }},
+      y: {{ y|tojson }},
+      type: 'bar'
+    }];
+
+    var layout = {
+      xaxis: { title: 'Adaylar' },
+      yaxis: { title: 'Oy Oranı (%)' },
+      title: 'Cumhurbaşkanlığı Seçimi Oy Oranları'
+    };
+
+    Plotly.newPlot('plot', data, layout);
+  </script>
+  {{ content|safe }}
+</body>
+</html
